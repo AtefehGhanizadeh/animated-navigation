@@ -1,0 +1,289 @@
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --primaryColor: #fff;
+  --navColor1: #343f42;
+  --navColor2: #E38F93;
+  --navColor3: #608094;
+  --navColor4: #E7C192;
+  --navColor5: #7EBD77;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+
+}
+
+/* --- Navigation Menu ------------------------------ */
+
+.nav{
+  width: 100%;
+  height: 100%;
+
+}
+.menu{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.menu li{
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li a{
+  color: white;
+  font-size: 1.3rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li a:hover{
+  scale: 110%;
+}
+
+.nav-items{
+  transform: translateX(-100%);
+  transition-duration: .7s;
+}
+
+#nav-1{
+  background-color: var(--navColor1);
+  transition-delay: 0.15s;
+}
+
+#nav-2{
+  background-color: var(--navColor2);
+  transition-delay: 0.2s;
+}
+
+#nav-3{
+  background-color: var(--navColor3);
+  transition-delay: 0.25s;
+  
+}
+
+#nav-4{
+  background-color: var(--navColor4);
+  transition-delay: 0.3s;
+  
+}
+
+#nav-5{
+  background-color: var(--navColor5);
+  transition-delay: 0.35s;
+  
+}
+
+/* Slide in animation with delay for each */
+.slide-in-1 {
+  animation: slide-in 0.4s linear 0.2s both;
+}
+
+.slide-in-2 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+
+.slide-in-3 {
+  animation: slide-in 0.4s linear 0.6s both;
+}
+
+.slide-in-4 {
+  animation: slide-in 0.4s linear 0.8s both;
+}
+
+.slide-in-5 {
+  animation: slide-in 0.4s linear 1s both;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Slide out animation with delay for each */
+.slide-out-1 {
+  animation: slide-out 0.3s linear 0.5s both;
+}
+
+.slide-out-2 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+
+.slide-out-3 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+
+.slide-out-4 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+
+.slide-out-5 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Overlay */
+
+.overlay{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+/* Overlay Slid Right Animation */
+
+.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+
+/* Overlay Slid Left Animation */
+
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(-100%);
+}
+
+
+
+/* --- Menu Bars ------------------------------------ */
+
+.menu-bars {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  z-index: 10;
+  display: inline;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  margin: 8px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: rotate(-45deg) translate(-7px, 8px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+/* --- Sections ------------------------------------ */
+
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primaryColor);
+}
+
+section#home {
+  background-image: url("https://img.freepik.com/premium-vector/abstract-colorful-patterned-background-vector_53876-163796.jpg?w=740");
+  background-size: cover;
+  background-position: center center;
+}
+
+section#home a {
+  position: absolute;
+  z-index: 2;
+  top: 1.5rem;
+  left: 1.5rem;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding-bottom: 5px;
+  color: var(--primaryColor);
+  border-bottom: 1px solid var(--primaryColor);
+}
+
+section#about {
+  background-color: var(--navColor2);
+}
+
+section#skills {
+  background-color: var(--navColor3);
+}
+
+section#projects {
+  background-color: var(--navColor4);
+}
+
+section#contact {
+  background-color: var(--navColor5);
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media (max-width: 600px) {
+  section#home a {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .menu-bars {
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  section{
+    font-size: 0.8rem;
+  }
+}
